@@ -4,6 +4,7 @@ ENV CONFIG_JSON1=none CONFIG_JSON2=none UUID=91cb66ba-a373-43a0-8169-33d4eeaeb85
 
 RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
  && mkdir -m 777 /v2raybin \ 
+ && mkdir -m 777 /v2raybin/v2ray-v$VER-linux-64 \ 
  && cd /v2raybin \
  && curl -L -H "Cache-Control: no-cache" -o v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip \
  && unzip v2ray.zip -d v2ray-v$VER-linux-64 \
